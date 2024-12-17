@@ -1,0 +1,207 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .chat-container {
+    width: 100%;
+    max-width: 800px;
+    height: 600px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .chatbox {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    border-bottom: 1px solid #eee;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-container {
+    display: flex;
+    padding: 15px;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  textarea {
+    width: 85%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    resize: none;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  textarea:focus {
+    border-color: #4CAF50;
+  }
+  
+  button {
+    width: 12%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  button:active {
+    background-color: #389438;
+  }
+  
+  .message {
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: 8px;
+    max-width: 75%;
+    word-wrap: break-word;
+  }
+  
+  .message.user {
+    background-color: #d0f7c7;
+    align-self: flex-end;
+  }
+  
+  .message.ai {
+    background-color: #e0e0e0;
+  }
+  
+  .message.loading {
+    display: flex;
+    align-items: center;
+    font-style: italic;
+    color: #4CAF50;
+  }
+  
+  .loading-spinner {
+    margin-left: 10px;
+    border: 3px solid #fff;
+    border-top: 3px solid #4CAF50;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .message.description {
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+    padding: 5px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Code Block Styling */
+  .code-block {
+    background-color: #2d2d2d;
+    color: #f7f7f7;
+    font-family: 'Courier New', monospace;
+    padding: 15px;
+    border-radius: 8px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-x: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    position: relative;
+  }
+  
+  /* Syntax Highlighting for Code */
+  code[class*="language-"] {
+    color: #f8f8f2;
+    background: none;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0.5rem;
+    display: block;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  /* Adding line numbers to code */
+  pre[class*="language-"] {
+    position: relative;
+    counter-reset: line;
+  }
+  
+  pre[class*="language-"] code {
+    display: block;
+  }
+  
+  pre[class*="language-"] code .line {
+    display: block;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  
+  pre[class*="language-"] code .line:before {
+    content: counter(line);
+    counter-increment: line;
+    position: absolute;
+    left: 0;
+    padding-right: 10px;
+    color: #999;
+    font-size: 0.85em;
+    width: 2rem;
+    text-align: right;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 600px) {
+    .input-container {
+      flex-direction: column;
+    }
+  
+    textarea {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    button {
+      width: 100%;
+    }
+  }
+  
